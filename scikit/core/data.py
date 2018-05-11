@@ -20,10 +20,10 @@ def get_full_data():
         if((class_value  in classes) == False):
             classes.append(class_value)
 
-    Y = np.zeros([X.shape[0], len(classes)])
+    Y = np.zeros(X.shape[0])
     for i in range(X.shape[0]):
         class_value = data[i][ len(data[0])-1 ]
-        Y[i][classes.index(class_value)] = 1
+        Y[i] = classes.index(class_value)
 
     return X, Y
 
